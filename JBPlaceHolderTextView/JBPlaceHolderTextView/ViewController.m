@@ -44,7 +44,8 @@
     
     [back addTarget:textView1 action:@selector(resignFirstResponder) forControlEvents:UIControlEventTouchUpInside];
     [back addTarget:textView2 action:@selector(resignFirstResponder) forControlEvents:UIControlEventTouchUpInside];
-
+    
+    NSLog(@"%@, %@", textView1.text, textView2.text);
 }
 
 - (void)didReceiveMemoryWarning {

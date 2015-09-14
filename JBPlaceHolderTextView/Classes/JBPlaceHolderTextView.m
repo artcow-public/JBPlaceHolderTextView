@@ -80,12 +80,19 @@
 {
     _placeHolder = placeHolder;
     
-    if (self.text.length == 0 || self.placeHolderFlag)
+    if (super.text.length == 0 || self.placeHolderFlag)
     {
         [super setText:placeHolder];
         [super setTextColor:[self _placeHolderColor]];
         self.placeHolderFlag = YES;
     }
+}
+
+- (NSString *)text
+{
+    if (self.placeHolderFlag)
+        return @"";
+    return super.text;
 }
 
 #pragma mark - private method
